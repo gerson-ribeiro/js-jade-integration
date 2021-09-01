@@ -87,7 +87,6 @@ class XHRServices {
      * @returns Promise
      */
     _send_request(data = null, timeout = 60000) {
-        this._xhr.withCredentials = this.get_token() ? true : false;
         this._xhr.responseType = this._responseType;
 
         return new Promise((resolve, reject) => {
