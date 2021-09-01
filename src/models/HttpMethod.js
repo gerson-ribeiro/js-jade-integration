@@ -1,8 +1,10 @@
 export default class HttpMethod {
-    static GET = "get";
-    static POST = "post";
-    static PUT = "put";
-    static DELETE = "delete";
-    static OPTIONS = "options";
-    static PATCH = "patch";
+    constructor() {
+        GET = "get";
+        POST = "post";
+        PUT = "put";
+        DELETE = "delete";
+        OPTIONS = "options";
+        PATCH = "patch";
+    }
 }

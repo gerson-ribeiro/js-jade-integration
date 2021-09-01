@@ -28,35 +28,35 @@ class XHRServices {
 
     get(endpoint) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(HttpMethod.GET, this._url + endpoint);
+        this._xhttp.open(new HttpMethod().GET, this._url + endpoint);
 
         return this._send_request(body);
     }
 
     post(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(HttpMethod.POST, this._url + endpoint);
+        this._xhttp.open(new HttpMethod().POST, this._url + endpoint);
 
         return this._send_request(body);
     }
 
     formData(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(HttpMethod.POST, this._url + endpoint);
+        this._xhttp.open(new HttpMethod().POST, this._url + endpoint);
 
         return this._send_request(body);
     }
 
     put(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(HttpMethod.PUT, this._url + endpoint);
+        this._xhttp.open(new HttpMethod().PUT, this._url + endpoint);
 
         return this._send_request(body);
     }
 
     delete(endpoint) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(HttpMethod.DELETE, this._url + endpoint);
+        this._xhttp.open(new HttpMethod().DELETE, this._url + endpoint);
 
         return this._send_request();
     }
