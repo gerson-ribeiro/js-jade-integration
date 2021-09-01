@@ -8,18 +8,18 @@ Install v1 from repository
 
 ### Step 2
 Instantiate XHRManager into your Resource package/file.
+
 Hint: In ReactJs and ReactNative, You should use FactoryPattern.
-``
-//Resource.js
+```
 import api from "js-jade-integration";
 
 export const CardResource = () =>
     new api.XHRManager("https://api.magicthegathering.io/v1", "cards");
-``
+```
 
 ### Step 3
 Use your resource in your functionComponent, like this:
-``
+```
 const MTGRes = CardResource();
 
 export const CardController = (prop) => {
@@ -47,7 +47,7 @@ export const CardController = (prop) => {
 function getCards(setCards) {
     MTGRes.get().then(setCards, /* Error Log */ console.log);
 }
-``
+```
 
 ## Class Components
 
