@@ -6,6 +6,7 @@ class XHRServices {
         this._url = url.endsWith("/") ? url : `${url}/`;
         this._header = header;
         this._responseType = "json";
+        console.log(url);
     }
 
     setUrl(url) {
