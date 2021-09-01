@@ -9,11 +9,9 @@ const { default: StorageService } = require("./src/uteis/StorageService");
 const { StringNormalize } = require("./src/uteis/StringNormalizer");
 
 module.exports = {
-    XHRServices: XHRServices,
-    XHRManager: XHRManager,
-    utils: {
-        query_formatter: QueryFormatter,
-        storage_service: StorageService,
-        string_normalize: StringNormalize,
-    },
+    XHRServices,
+    XHRManager,
+    QueryFormatter,
+    StorageService,
+    StringNormalize,
 };
