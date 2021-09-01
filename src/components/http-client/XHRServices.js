@@ -41,7 +41,7 @@ class XHRServices {
         this.setHeadersDefault();
         this.insertHeaders();
 
-        return this._send_request(body);
+        return this._send_request();
     }
 
     post(endpoint, body) {
