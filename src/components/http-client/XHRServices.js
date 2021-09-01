@@ -5,7 +5,6 @@ class XHRServices {
         this._xhr = new XMLHttpRequest();
         this._url = url.endsWith("/") ? url : `${url}/`;
         this._header = header;
-        this._endpoint = endpoint;
         this._responseType = "json";
     }
 
