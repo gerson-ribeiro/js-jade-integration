@@ -14,6 +14,7 @@ class XHRServices {
     }
 
     insertHeaders() {
+        if (this._header) return;
         for (let i = 0; i < this.header.length; i++) {
             const head = this.header[i];
 
