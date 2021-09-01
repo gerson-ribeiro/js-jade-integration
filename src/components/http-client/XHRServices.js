@@ -93,6 +93,7 @@ class XHRServices {
             this._xhr.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     resolve(this.response);
+                    clearTimeout();
                 }
             };
             this._xhr.send(JSON.stringify(data));

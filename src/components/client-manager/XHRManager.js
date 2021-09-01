@@ -32,8 +32,6 @@ export default class XHRManager {
     _doEndpoint(obj) {
         if (!this._endpoint)
             throw new Error("Endpoint não cadastrado! Favor implementar...");
-        if (typeof obj !== "object") return this._endpoint;
-        if (!obj) return this._endpoint;
 
         return `${this._endpoint}?${QueryFormatter(obj)}`;
     }
