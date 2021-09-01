@@ -27,7 +27,7 @@ export const CardController = (prop) => {
 
     useEffect(() => {
         getCards(setCards);
-    }, [name]);
+    }, []);
 
     return (
             <div className="row justify-content-center">
