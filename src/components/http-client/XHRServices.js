@@ -36,7 +36,7 @@ class XHRServices {
 
     get(endpoint) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(new HttpMethod().GET, this._url + endpoint);
+        this._xhr.open(new HttpMethod().GET, this._url + endpoint);
         this.setHeadersDefault();
         this.insertHeaders();
 
@@ -45,7 +45,7 @@ class XHRServices {
 
     post(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(new HttpMethod().POST, this._url + endpoint);
+        this._xhr.open(new HttpMethod().POST, this._url + endpoint);
         this.setHeadersDefault();
         this.insertHeaders();
 
@@ -54,7 +54,7 @@ class XHRServices {
 
     formData(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(new HttpMethod().POST, this._url + endpoint);
+        this._xhr.open(new HttpMethod().POST, this._url + endpoint);
         this.setHeadersDefault();
         this.insertHeaders();
 
@@ -63,7 +63,7 @@ class XHRServices {
 
     put(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(new HttpMethod().PUT, this._url + endpoint);
+        this._xhr.open(new HttpMethod().PUT, this._url + endpoint);
         this.setHeadersDefault();
         this.insertHeaders();
 
@@ -72,7 +72,7 @@ class XHRServices {
 
     delete(endpoint) {
         if (!this._url) throw new Error("É necessário informar a URL!");
-        this._xhttp.open(new HttpMethod().DELETE, this._url + endpoint);
+        this._xhr.open(new HttpMethod().DELETE, this._url + endpoint);
         this.setHeadersDefault();
         this.insertHeaders();
 
@@ -90,16 +90,16 @@ class XHRServices {
         this._xhr.responseType = this._responseType;
 
         return new Promise((resolve, reject) => {
-            this._xhttp.onreadystatechange = function () {
+            this._xhr.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     resolve(this.response);
                 }
             };
-            this._xhttp.send(JSON.stringify(data));
+            this._xhr.send(JSON.stringify(data));
             if (timeout) {
                 setTimeout(function () {
                     reject("timeout");
-                    this._xhttp.abort();
+                    this._xhr.abort();
                 }, timeout);
             }
         });
