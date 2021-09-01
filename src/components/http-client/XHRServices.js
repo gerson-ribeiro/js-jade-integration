@@ -13,8 +13,16 @@ class XHRServices {
         this._url = url.endsWith("/") ? url : `${url}/`;
     }
 
-    setHeaders(name, value) {
-        this._xhr.setRequestHeader(name, value);
+    insertHeaders() {
+        for (let i = 0; i < this.header.length; i++) {
+            const head = this.header[i];
+
+            this._xhr.setRequestHeader(head.name, head.value);
+        }
+    }
+
+    setHeaders(obj) {
+        this._xhr.setRequestHeader(obj.name, obj.value);
     }
 
     setHeadersDefault() {
@@ -29,6 +37,8 @@ class XHRServices {
     get(endpoint) {
         if (!this._url) throw new Error("É necessário informar a URL!");
         this._xhttp.open(new HttpMethod().GET, this._url + endpoint);
+        this.setHeadersDefault();
+        this.insertHeaders();
 
         return this._send_request(body);
     }
@@ -36,6 +46,8 @@ class XHRServices {
     post(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
         this._xhttp.open(new HttpMethod().POST, this._url + endpoint);
+        this.setHeadersDefault();
+        this.insertHeaders();
 
         return this._send_request(body);
     }
@@ -43,6 +55,8 @@ class XHRServices {
     formData(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
         this._xhttp.open(new HttpMethod().POST, this._url + endpoint);
+        this.setHeadersDefault();
+        this.insertHeaders();
 
         return this._send_request(body);
     }
@@ -50,6 +64,8 @@ class XHRServices {
     put(endpoint, body) {
         if (!this._url) throw new Error("É necessário informar a URL!");
         this._xhttp.open(new HttpMethod().PUT, this._url + endpoint);
+        this.setHeadersDefault();
+        this.insertHeaders();
 
         return this._send_request(body);
     }
@@ -57,6 +73,8 @@ class XHRServices {
     delete(endpoint) {
         if (!this._url) throw new Error("É necessário informar a URL!");
         this._xhttp.open(new HttpMethod().DELETE, this._url + endpoint);
+        this.setHeadersDefault();
+        this.insertHeaders();
 
         return this._send_request();
     }

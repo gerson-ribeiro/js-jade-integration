@@ -5,7 +5,6 @@ import XHRServices from "../http-client/XHRServices";
 export default class XHRManager {
     constructor(url, endpoint) {
         this._service = new XHRServices(url);
-        this._service.setHeadersDefault();
         this._endpoint = endpoint;
         this._AUTH = "Authentication";
     }
