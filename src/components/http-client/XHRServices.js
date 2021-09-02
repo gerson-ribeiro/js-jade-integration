@@ -98,7 +98,7 @@ class XHRServices {
             };
             this._xhr.send(JSON.stringify(data));
             if (timeout) {
-                setTimeout(function () {
+                setTimeout(() => {
                     reject("timeout");
                     if (this._xhr) this._xhr.abort();
                 }, timeout);
