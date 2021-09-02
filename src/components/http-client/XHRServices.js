@@ -27,8 +27,8 @@ class XHRServices {
     }
 
     setHeadersDefault() {
-        this.setHeaders("Content-Type", "application/json");
-        this.setHeaders("Access-Control-Allow-Origin", "*");
+        this.setHeaders({ name: "Content-Type", value: "application/json" });
+        this.setHeaders({ name: "Access-Control-Allow-Origin", value: "*" });
     }
 
     setWithCredentials(credentials) {
