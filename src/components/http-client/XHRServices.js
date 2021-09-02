@@ -100,7 +100,7 @@ class XHRServices {
             if (timeout) {
                 setTimeout(function () {
                     reject("timeout");
-                    this._xhr.abort();
+                    if (this._xhr) this._xhr.abort();
                 }, timeout);
             }
         });
