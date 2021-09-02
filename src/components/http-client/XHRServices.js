@@ -22,13 +22,13 @@ class XHRServices {
         }
     }
 
-    setHeaders(obj) {
-        this._xhr.setRequestHeader(obj.name, obj.value);
+    setHeaders(name, value) {
+        this._xhr.setRequestHeader(name, value);
     }
 
     setHeadersDefault() {
-        this.setHeaders({ name: "Content-Type", value: "application/json" });
-        this.setHeaders({ name: "Access-Control-Allow-Origin", value: "*" });
+        this.setHeaders("Content-Type", "application/json");
+        this.setHeaders("Access-Control-Allow-Origin", "*");
     }
 
     setWithCredentials(credentials) {
